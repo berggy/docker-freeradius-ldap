@@ -2,7 +2,7 @@ FROM alpine:3.13.1
 
 MAINTAINER 2stacks <2stacks@2stacks.net>
 
-# Use docker build --pull -t 2stacks/freeradius .
+# Use docker build --pull -t 2stacks/freeradius-ldap .
 
 # Image details--changed by berg for LDAP
 LABEL net.2stacks.name="2stacks" \

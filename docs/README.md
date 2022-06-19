@@ -31,6 +31,11 @@ $ docker run -d -t --name freeradius -p 1812:1812/udp -p 1813:1813/udp -e DB_HOS
 -   RADIUS_KEY=testing123
 -   RAD_CLIENTS=10.0.0.0/24
 -   RAD_DEBUG=no
+-   LDAP_SERVER=localhost
+-   LDAP_PORT=389
+-   LDAP_ADMIN=admin
+-   LDAP_ADMIN_PASSWD=password
+-   LDAP_BASE_DN=basedn
 
 # Docker Compose Example
 
@@ -57,6 +62,11 @@ services:
       #- RADIUS_KEY=testing123
       #- RAD_CLIENTS=10.0.0.0/24
       - RAD_DEBUG=yes
+      - LDAP_SERVER=localhost
+      - LDAP_PORT=389
+      - LDAP_ADMIN=admin
+      - LDAP_ADMIN_PASSWD=password
+      - LDAP_BASE_DN=basedn      
     depends_on:
       - mysql
     links:

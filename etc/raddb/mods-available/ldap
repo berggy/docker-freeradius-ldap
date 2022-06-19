@@ -16,21 +16,26 @@ ldap {
 	#  - ldaps:// (LDAP over SSL)
 	#  - ldapi:// (LDAP over Unix socket)
 	#  - ldapc:// (Connectionless LDAP)
-	server = 'localhost'
+	server = $ENV{LDAP_SERVER}
+#	server = 'localhost'
 #	server = 'ldap.rrdns.example.org'
 #	server = 'ldap.rrdns.example.org'
 
 	#  Port to connect on, defaults to 389, will be ignored for LDAP URIs.
 #	port = 389
+	port = $ENV{LDAP_PORT}
 
 	#  Administrator account for searching and possibly modifying.
 	#  If using SASL + KRB5 these should be commented out.
 #	identity = 'cn=admin,dc=example,dc=org'
 #	password = mypass
+	identity = $ENV{LDAP_ADMIN}
+	password = $ENV{LDAP_ADMIN_PASSWD}
 
 	#  Unless overridden in another section, the dn from which all
 	#  searches will start from.
-	base_dn = 'dc=example,dc=org'
+#	base_dn = 'dc=example,dc=org'
+	base_dn = $ENV{LDAP_BASE_DN}
 
 	#
 	#  SASL parameters to use for admin binds
